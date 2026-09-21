@@ -43,10 +43,25 @@
         </div>
 
         <!-- Primary action pinned at the bottom -->
-        <button class="button-primary" style="width: 350px; gap: var(--space-2); position: fixed; bottom: 24px; ">
+        <button class="button-primary" id="send-capsule-btn" style="width: 350px; gap: var(--space-2); position: fixed; bottom: 24px; ">
             <img src="../Icons/Icon Name=Send.svg" alt="Send">
             <span>SEND CAPSULE</span>
         </button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const sendButton = document.getElementById('send-capsule-btn');
+
+  if (sendButton) {
+    sendButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Navigate to your capsules page
+      window.location.href = 'capsule-page.html';
+    });
+  }
+});
+    </script>
+
 </body>
 </html>
