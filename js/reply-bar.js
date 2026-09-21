@@ -6,6 +6,8 @@ class ReplyBar extends HTMLElement {
   connectedCallback() {
     this.render();
     this.setupEvents();
+    this.style.width = '350px';
+    this.style.maxWidth = '100%';
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
