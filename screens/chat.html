@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - Capsule</title>
+    <script src="../js/photocard.js" defer></script>
     <link rel="stylesheet" href="../assets/css/design-tokens.css">
     <link rel="stylesheet" href="../assets/css/shared-components.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,28 +14,32 @@
 <body>
     <div class="screen">
         <!-- Secondary Header -->
-        <header class="header-secondary mb-4">
-            <button class="back-button">
+        <header class="header-secondary mb-4 hgap-4">
+            <button class="icon-button">
                 <img src="../Icons/Icon Name=akar-icons_chevron-left-small.svg" alt="Back">
             </button>
-            <div class="avatar avatar-lg">
-                <div class="avatar-placeholder"></div>
+            <div>
+                <img src="../Avatar/Photo by Pesce Huang.png" alt="Elena Vance" class="avatar small">
             </div>
-            <h1 class="title">Elena Vance</h1>
-            <div class="ms-auto">
-                <div style="background-color: var(--color-bg-component); border: 1px solid var(--color-button-stroke); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                    <div style="width: 12px; height: 12px; background-color: var(--color-text-emphasis); border-radius: 50%;"></div>
-                </div>
-                <span class="text-caption text-emphasis ms-2" style="font-size: 14px;">7:24 AM [+16h]</span>
-            </div>
+            <h3>Elena Vance</h3>
+            <div class="count-badge light">7:24 AM [+16h]</div>
         </header>
+        <div style="display: flex; flex-direction: row; gap: var(--space-4);">
+            <!-- Date Chip -->
+            <div class="count-badge light">Today</div>
 
-        <!-- Date Chip -->
-        <div class="flex-center mb-4">
-            <div style="background-color: var(--color-bg-component); border: 1px solid var(--color-button-stroke); border-radius: 20px; padding: 4px 12px;">
-                <span class="text-caption">Today</span>
-            </div>
-<!-- Message 1: Received -->
+        </div>
+            
+              
+        <!-- Message 1: Received -->
+        <photo-card 
+  reply
+  src="../images/Camera.png" 
+  alt="Food" 
+  caption="Rain cleared up finally"
+  subcaption="Sent 4:20 PM">
+</photo-card>
+
         <div class="mb-4">
             <div class="flex-between">
                 <div class="flex-1" style="max-width: 75%;">
@@ -103,10 +108,12 @@
                 </div>
             </div>
         </div>
-<!-- Reply Bar (floating at bottom) -->
+        </div>
+        
+        <!-- Reply Bar (floating at bottom) -->
         <reply-bar></reply-bar>
-    </div>
+
 
 </body>
 </html>
-        </div>
+        
