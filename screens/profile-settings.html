@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - Capsule</title>
+    <link rel="stylesheet" href="../assets/css/design-tokens.css">
+    <link rel="stylesheet" href="../assets/css/shared-components.css">
+</head>
+<body>
+    <div class="screen">
+        <!-- Secondary Header -->
+        <header class="header-secondary mb-4">
+            <button class="back-button icon-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <h1 class="title">Profile Settings</h1>
+        </header>
+
+        <!-- Avatar Block -->
+        <div class="flex-center mb-4">
+            <div style="position: relative; width: 96px; height: 96px;">
+                <div class="avatar avatar-profile">
+                    <div class="avatar-placeholder"></div>
+                </div>
+                <!-- Camera button overlay -->
+                <div style="position: absolute; bottom: 0; right: 0; width: 32px; height: 32px; background-color: var(--color-text-emphasis); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="me-2" style="width: 20px; height: 20px; fill: var(--color-text-black);"><path fill="currentColor" d="M9 5h10a2 2 0 012 2v10a2 2 0 01-2 2H9a2 2 0 01-2-2V7a2 2 0 012-2zm0 2h10v10H9V7zm4 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                </div>
+            </div>
+            <div class="ms-4">
+                <h2 class="text-title text-emphasis" style="font-size: 24px; line-height: 24px; margin: 0;">Samuel Chen</h2>
+                <button class="icon-button" style="margin-top: 4px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13H5v-2h14v2z"/></svg>
+                </button>
+            </div>
+<!-- Username Card -->
+        <div class="card card-bordered card-padded mb-4" style="max-width: 300px;">
+            <div class="text-caption text-emphasis mb-2" style="font-size: 14px;">USERNAME</div>
+            <div style="position: relative; background-color: var(--color-bg-component); border-radius: 24px; padding: 8px 12px;">
+                <span class="text-body text-emphasis" style="font-size: 26px;">samuel1022</span>
+                <button class="icon-button" style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13H5v-2h14v2z"/></svg>
+                </button>
+            </div>
+            <p class="text-caption mt-3" style="font-size: 14px;">Your unique Capsule handle. Friends use this to find and add you.</p>
+        </div>
+<!-- Location and Time Card -->
+        <div class="card card-bordered card-padded mb-4" style="max-width: 300px;">
+            <div class="flex-between mb-2">
+                <div class="text-caption text-emphasis" style="font-size: 14px;">LOCATION & TIME</div>
+                <button class="icon-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13H5v-2h14v2z"/></svg>
+                </button>
+            </div>
+            <div style="background-color: var(--color-bg-component); border-radius: 24px; padding: 8px 12px; font-size: 26px; font-weight: 600;">
+                Pacific Daylight Time [UTC-7]
+            </div>
+        </div>
+<!-- Destructive Button -->
+        <button class="button-destructive mb-4" style="width: 100%; max-width: 300px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="me-2" style="width: 20px; height: 20px; fill: var(--color-text-critical);"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+            SIGN OUT
+        </button>
+</div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <div class="nav-slot capsules inactive">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"/></svg>
+            <div class="label">Capsules</div>
+        </div>
+        <div class="nav-slot capture">
+            <div class="outer-ring">
+                <div class="inner-ring">
+                    <div class="center-disc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-slot chats inactive">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16l4-2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 12H6v-2h8v2zm8-6H6v-2h12v2zm0-4H6V6h12v2z"/></svg>
+            <div class="label">Chats</div>
+        </div>
+    </nav>
+</body>
+</html>
+        </div>

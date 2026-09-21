@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Friends - Capsule</title>
+    <link rel="stylesheet" href="../assets/css/design-tokens.css">
+    <link rel="stylesheet" href="../assets/css/shared-components.css">
+</head>
+<body>
+    <div class="screen">
+        <!-- Secondary Header -->
+        <header class="header-secondary">
+            <button class="back-button icon-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <h1 class="title">Add Friends</h1>
+        </header>
+
+        <!-- Search Field -->
+        <div class="search-field mt-4">
+            <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <input type="text" placeholder="Search Friends" value="alex">
+<!-- Search Result Cards -->
+        <div class="mt-4">
+            <!-- Card A -->
+            <div class="card card-bordered card-padded mt-2 flex-between">
+                <div>
+                    <div class="avatar avatar-lg">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <p class="text-heading-2">@alex_haha</p>
+                    <p class="text-caption">9:24 AM [+16h]</p>
+                </div>
+                <button class="button-primary">ADD FRIEND</button>
+            </div>
+
+            <!-- Card B -->
+            <div class="card card-bordered card-padded mt-2 flex-between">
+                <div>
+                    <div class="avatar avatar-lg">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <p class="text-heading-2">@alex_nono</p>
+                    <p class="text-caption">Japan 6:24 AM [-16h]</p>
+                </div>
+                <button class="button-primary">ADD FRIEND</button>
+            </div>
+        </div>
+<!-- Address Book Card -->
+        <div class="card card-bordered card-padded mt-4 flex-between" style="height: 70px;">
+            <div>
+                <button class="icon-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12l4-2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6v-2h6v2h6v-2zm0-10H6V6h12v2z"/></svg>
+                </button>
+            </div>
+            <div class="flex-1">
+                <p class="text-heading-2">Address Book</p>
+                <p class="text-caption">6 acquaintances found</p>
+            </div>
+            <button class="button-secondary">SYNC CONTACTS</button>
+        </div>
+<!-- Friend Requests Section -->
+        <div class="mt-6">
+            <div class="flex-between">
+                <h2 class="text-heading-3 text-emphasis">FRIEND REQUESTS</h2>
+                <div class="count-badge count-badge-dark">2</div>
+            </div>
+
+            <!-- Friend Request Card 1 -->
+            <div class="card card-bordered card-padded mt-2" style="height: 140px;">
+                <div class="flex-between">
+                    <div>
+                        <div class="avatar avatar-lg">
+                            <div class="avatar-placeholder"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-heading-2">@chloem</p>
+                        <p class="text-caption">9:24 AM [+16h]</p>
+                    </div>
+                    <p class="text-caption mt-2">3h ago</p>
+                </div>
+                <div class="mt-4 flex-between">
+                    <button class="button-primary" style="flex: 0.7;">ACCEPT</button>
+                    <button class="button-secondary" style="flex: 0.28;">DECLINE</button>
+                </div>
+            </div>
+
+            <!-- Friend Request Card 2 -->
+            <div class="card card-bordered card-padded mt-2" style="height: 140px;">
+                <div class="flex-between">
+                    <div>
+                        <div class="avatar avatar-lg">
+                            <div class="avatar-placeholder"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-heading-2">@joeyblues</p>
+                        <p class="text-caption">8:24 AM [+16h]</p>
+                    </div>
+                    <p class="text-caption mt-2">Yesterday</p>
+                </div>
+                <div class="mt-4 flex-between">
+                    <button class="button-primary" style="flex: 0.7;">ACCEPT</button>
+                    <button class="button-secondary" style="flex: 0.28;">DECLINE</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <div class="nav-slot capsules inactive">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"/></svg>
+            <div class="label">Capsules</div>
+        </div>
+        <div class="nav-slot capture">
+            <div class="outer-ring">
+                <div class="inner-ring">
+                    <div class="center-disc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-slot chats inactive">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16l4-2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 12H6v-2h8v2zm8-6H6v-2h12v2zm0-4H6V6h12v2z"/></svg>
+            <div class="label">Chats</div>
+        </div>
+    </nav>
+</body>
+</html>
+        </div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capsule App</title>
+    <link rel="stylesheet" href="../assets/css/design-tokens.css">
+    <link rel="stylesheet" href="../assets/css/shared-components.css">
+</head>
+<body>
+    <div class="screen">
+        <h1 class="text-title text-emphasis mt-6 text-center">Capsule App Screens</h1>
+        <div class="mt-8">
+            <a href="screens/add-friends.html" class="button-block mb-2">Add Friends</a>
+            <a href="screens/camera-edit.html" class="button-block mb-2">Camera Edit</a>
+            <a href="screens/camera.html" class="button-block mb-2">Camera</a>
+            <a href="screens/capsule-page.html" class="button-block mb-2">Capsule Page</a>
+            <a href="screens/chat-page.html" class="button-block mb-2">Chat Page</a>
+            <a href="screens/chat.html" class="button-block mb-2">Chat</a>
+            <a href="screens/profile-settings.html" class="button-block mb-2">Profile Settings</a>
+        </div>
+    </div>
+    
+    <!-- Bottom navigation bar (shown on most screens) -->
+    <nav class="bottom-nav">
+        <div class="nav-slot capsules inactive">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"/></svg>
+            <div class="label">Capsules</div>
+        </div>
+        <div class="nav-slot capture">
+            <div class="outer-ring">
+                <div class="inner-ring">
+                    <div class="center-disc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-slot chats inactive">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16l4-2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 12H6v-2h8v2zm8-6H6v-2h12v2zm0-4H6V6h12v2z"/></svg>
+            <div class="label">Chats</div>
+        </div>
+    </nav>
+</body>
+</html>

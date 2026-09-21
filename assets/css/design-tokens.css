@@ -1,0 +1,91 @@
+/* Design Tokens for Capsule App */
+/* Extracted from .clinerules/DESIGN.md */
+
+/* Color Tokens */
+:root {
+  /* Backgrounds */
+  --color-bg: #131313; /* obsidian dark (Text/Black) */
+  --color-bg-chat: rgba(42, 42, 42, 0.5); /* Chat: #2A2A2A80 */
+  --color-bg-component: #1C1B1B; /* Component BG */
+  
+  /* Buttons */
+  --color-button-active: #FFFFFF; /* Button/Active */
+  --color-button-fill: rgba(0, 0, 0, 0.45); /* Button/Fill: #00000073 */
+  --color-button-stroke: rgba(68, 71, 72, 0.6); /* Button/Stroke: #44474899 */
+  --color-button-inactive: rgba(196, 199, 200, 0.6); /* Button/Inactive: #C4C7C899 */
+  --color-button-fill-critical: rgba(147, 0, 10, 0.5); /* Button/Fill-Critical: #93000A80 */
+  
+  /* Text */
+  --color-text-inactive: rgba(196, 199, 200, 0.6); /* Text/Inactive: #C4C7C899 */
+  --color-text-emphasis: #FFFFFF; /* Text/Emphasis */
+  --color-text-caption: #C4C7C8; /* Text/Caption */
+  --color-text-body: #E5E2E1; /* Text/Body */
+  --color-text-black: #131313; /* Text/Black */
+  --color-text-critical: #FFB4AB; /* Text/Critical */
+  
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  --text-heading-3: 18px/24px var(--font-heading) 700;
+  --text-caption: 12px/16px var(--font-body) 400;
+  --text-body: 14px/20px var(--font-body) 400;
+  --text-subtitle-emphasized: 14px/20px var(--font-body) 600;
+  --text-caption-2: 10px/16px var(--font-body) 400;
+  --text-caption-2-emphasized: 10px/auto var(--font-body) 600;
+  --text-button: 12px/auto var(--font-heading) 700;
+  --text-heading-2: 14px/18px var(--font-heading) 700;
+  --text-title: 24px/24px var(--font-heading) 700;
+  
+  /* Spacing */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  
+  /* Layout */
+  --margin-side: 20px; /* Left and right margins for body */
+  --padding-vertical: 8px; /* Top and bottom padding */
+  --gap-card-vertical: 8px; /* Vertical gap between stacked cards */
+  
+  /* Radius */
+  --radius-card: 16px; /* Corner radius */
+  --radius-pill: 9999px; /* For full pills (effectively 100%) */
+  --radius-icon-button: 50%; /* For circular icons */
+  
+  /* Elevation */
+  --shadow-button: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Utility classes for typography */
+.text-heading-3 { font: var(--text-heading-3); }
+.text-caption { font: var(--text-caption); }
+.text-body { font: var(--text-body); }
+.text-subtitle-emphasized { font: var(--text-subtitle-emphasized); }
+.text-caption-2 { font: var(--text-caption-2); }
+.text-caption-2-emphasized { font: var(--text-caption-2-emphasized); }
+.text-button { font: var(--text-button); }
+.text-heading-2 { font: var(--text-heading-2); }
+.text-title { font: var(--text-title); }
+
+/* Utility classes for colors */
+.bg-main { background-color: var(--color-bg); }
+.bg-chat { background-color: var(--color-bg-chat); }
+.bg-component { background-color: var(--color-bg-component); }
+
+.text-emphasis { color: var(--color-text-emphasis); }
+.text-body { color: var(--color-text-body); }
+.text-caption { color: var(--color-text-caption); }
+.text-inactive { color: var(--color-text-inactive); }
+.text-black { color: var(--color-text-black); }
+.text-critical { color: var(--color-text-critical); }
+
+.button-active { background-color: var(--color-button-active); }
+.button-fill { background-color: var(--color-button-fill); }
+.button-stroke { border: 1px solid var(--color-button-stroke); }
+.button-inactive { background-color: var(--color-button-inactive); }
+.button-fill-critical { background-color: var(--color-button-fill-critical); }

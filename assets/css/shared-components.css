@@ -1,0 +1,536 @@
+/* Shared Components for Capsule App */
+/* Reusable UI components based on design specifications */
+
+/* Import design tokens */
+@import "./design-tokens.css";
+
+/* Base reset and utils */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+}
+
+/* Screen container */
+.screen {
+  width: 390px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: var(--space-4) var(--margin-side);
+  background-color: var(--color-bg);
+/* Headers */
+/* Top-level header (for Capsule Page, Chat Page) */
+.header-top-level {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-button-stroke);
+  margin-bottom: var(--space-4);
+}
+
+.header-top-level .wordmark {
+  font: var(--text-title);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-text-emphasis);
+}
+
+.header-top-level .icon-button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-component);
+  border: 1px solid var(--color-button-stroke);
+  border-radius: var(--radius-icon-button);
+  cursor: pointer;
+}
+
+.header-top-level .icon-button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-text-emphasis);
+}
+
+/* Secondary header (for Add Friends, Profile Settings, Chat) */
+.header-secondary {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-button-stroke);
+  margin-bottom: var(--space-4);
+}
+
+.header-secondary .back-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-component);
+  border: 1px solid var(--color-button-stroke);
+  border-radius: var(--radius-icon-button);
+  cursor: pointer;
+  margin-right: var(--space-3);
+}
+
+.header-secondary .back-button svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-text-emphasis);
+  transform: rotate(180deg); /* pointing left */
+}
+
+.header-secondary .title {
+  font: var(--text-heading-2);
+  color: var(--color-text-emphasis);
+}
+/* Buttons */
+/* Circular icon button */
+.icon-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-component);
+  border: 1px solid var(--color-button-stroke);
+  border-radius: var(--radius-icon-button);
+  cursor: pointer;
+  transition: background-color var(--space-1) ease;
+}
+
+.icon-button:hover {
+  background-color: rgba(28, 27, 27, 0.8);
+}
+
+.icon-button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-text-emphasis);
+}
+
+/* Primary button: full-pill, white fill, black text */
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 var(--space-6);
+  background-color: var(--color-button-active);
+  color: var(--color-text-black);
+  font: var(--text-button);
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  text-transform: uppercase;
+  gap: var(--space-2);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}
+
+/* Secondary button: full-pill, near-black fill, white text */
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 var(--space-6);
+  background-color: var(--color-button-inactive);
+  color: var(--color-text-emphasis);
+  font: var(--text-button);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-button-stroke);
+  cursor: pointer;
+  text-transform: uppercase;
+  gap: var(--space-2);
+}
+
+/* Destructive button (for sign out) */
+.button-destructive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 100%;
+  padding: 0 var(--space-6);
+  background-color: #93000A; /* Button/Fill-Critical without opacity for solid */
+  color: var(--color-text-critical);
+  font: var(--text-button);
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  gap: var(--space-2);
+}
+/* Count badge */
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 var(--space-2);
+  background-color: var(--color-button-active);
+  color: var(--color-text-black);
+  font: var(--text-caption-2);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+/* Count badge on dark surface (white with black text) */
+.count-badge-dark {
+  background-color: var(--color-text-emphasis);
+  color: var(--color-text-black);
+}
+
+/* Count badge on light surface (dark with white text) */
+.count-badge-light {
+  background-color: var(--color-text-black);
+  color: var(--color-text-emphasis);
+}
+
+/* Card component */
+.card {
+  background-color: var(--color-bg-component);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+}
+
+.card-bordered {
+  border: 1px solid var(--color-button-stroke);
+}
+
+.card-padded {
+  padding: var(--space-3);
+}
+
+.card-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-space-between > *:not(:last-child) {
+  margin-right: var(--space-3);
+}
+
+/* Search field */
+.search-field {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  background-color: var(--color-bg-component);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  border: 1px solid var(--color-button-stroke);
+}
+
+.search-field .search-icon {
+  width: 20px;
+  height: 20px;
+  padding: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-field .search-icon svg {
+  fill: var(--color-text-inactive);
+  width: 18px;
+  height: 18px;
+}
+
+.search-field input {
+  flex: 1;
+  border: none;
+  background: none;
+  color: var(--color-text-emphasis);
+  font: var(--text-body);
+  padding: 0 var(--space-3);
+}
+
+.search-field input::placeholder {
+  color: var(--color-text-inactive);
+  opacity: 0.7;
+}
+
+/* Reply bar */
+.reply-bar {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: var(--color-bg-component);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-button-stroke);
+  padding: 0 var(--space-3);
+  gap: var(--space-2);
+}
+
+.reply-bar .icon-button {
+  width: 36px;
+  height: 36px;
+}
+
+.reply-bar .placeholder {
+  flex: 1;
+  font: var(--text-body);
+  color: var(--color-text-inactive);
+}
+
+.reply-bar .send-button {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-button-active);
+  border-radius: var(--radius-icon-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reply-bar .send-button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-text-black);
+}
+
+/* Avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-text-inactive);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-lg {
+  width: 56px;
+  height: 56px;
+}
+
+.avatar-profile {
+  width: 96px;
+  height: 96px;
+}
+
+.avatar-placeholder {
+  background-color: #FF0000; /* red circle as specified */
+}
+/* Filter chips */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 var(--space-4);
+  font: var(--text-button);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.filter-chip.selected {
+  background-color: var(--color-button-active);
+  color: var(--color-text-black);
+}
+
+.filter-chip.selected .count-badge {
+  background-color: var(--color-text-black);
+  color: var(--color-text-emphasis);
+}
+
+.filter-chip.unselected {
+  background-color: var(--color-button-inactive);
+  color: var(--color-text-emphasis);
+  border: 1px solid var(--color-button-stroke);
+}
+
+.filter-chip.unselected .count-badge {
+  background-color: var(--color-text-emphasis);
+  color: var(--color-text-black);
+}
+
+/* Date and time block */
+.date-time-block {
+  text-align: center;
+  margin: var(--space-6) 0;
+}
+
+.date-time-block .date {
+  font: var(--text-body);
+  color: var(--color-text-inactive);
+}
+
+.date-time-block .time {
+  font: var(--text-heading-2);
+  letter-spacing: -0.5px;
+  color: var(--color-text-emphasis);
+  font-weight: 700;
+}
+
+/* Bottom navigation bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390px;
+  height: 73px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(28, 27, 27, 0.9);
+  border-top: 1px solid var(--color-button-stroke);
+  padding: var(--space-2) 0;
+  z-index: 100;
+}
+
+.nav-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-slot .icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: var(--space-1);
+}
+
+.nav-slot .label {
+  font: var(--text-caption-2);
+  font-weight: 600;
+}
+
+.nav-slot.active .icon,
+.nav-slot.active .label {
+  color: var(--color-text-emphasis);
+}
+
+.nav-slot.inactive .icon,
+.nav-slot.inactive .label {
+  color: var(--color-text-inactive);
+}
+
+/* Specific icons for nav */
+.nav-slot.capsules .icon {
+  /* hourglass icon - using settings as placeholder */
+}
+
+.nav-slot.chats .icon {
+  /* two-speech-bubbles icon - using chats icon */
+}
+
+.nav-slot.capture {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-slot.capture .outer-ring {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--color-text-emphasis);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-slot.capture .inner-ring {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-text-inactive);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-slot.capture .center-disc {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-text-black);
+  border-radius: 50%;
+  border: 2px solid var(--color-text-emphasis);
+}
+
+/* Utility classes */
+.hidden {
+  display: none !important;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mt-12 { margin-top: var(--space-12); }
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-12 { margin-bottom: var(--space-12); }
+/* Button block for links */
+.button-block {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: var(--space-3) 0;
+  background-color: var(--color-bg-component);
+  border: 1px solid var(--color-button-stroke);
+  border-radius: var(--radius-card);
+  color: var(--color-text-emphasis);
+  text-decoration: none;
+  font: var(--text-body);
+}
+
+.button-block:hover {
+  background-color: rgba(28, 27, 27, 0.8);
+}
+}
