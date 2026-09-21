@@ -198,9 +198,10 @@ caption {
 }
 
 /* Count badge on light surface (dark with white text) */
-.count-badge-light {
-  background-color: var(--color-text-black);
+.count-badge.light {
+  background-color: var(--color-button-fill);
   color: var(--color-text-emphasis);
+  border: 1px solid var(--color-button-stroke);
 }
 
 /* Utility classes */

@@ -52,7 +52,7 @@ class PhotoCard extends HTMLElement {
       <div class="photo-card-wrapper" style="width: 100%; display: flex; flex-direction: column; align-items: ${containerAlign};">
         
         <!-- Photo Box Container (Fixed 300px x 300px) --> 
-        <div class="card card-bordered" style="width: 300px; height: 300px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+        <div class="card card-bordered" style="width: 200px; height: 200px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
           
           <!-- Photo Media -->
           <div style="flex: 1; width: 100%; overflow: hidden;">
