@@ -30,12 +30,12 @@
   --font-body: 'Plus Jakarta Sans', sans-serif;
   
   --text-heading-3: 600 18px/24px var(--font-heading);
-  --text-caption: 12px/16px var(--font-body) 400;
+  --text-caption: 400 12px/16px var(--font-body);
   --text-body: 14px/20px var(--font-body) 400;
   --text-subtitle-emphasized: 14px/20px var(--font-body) 600;
   --text-caption-2: 10px/16px var(--font-body) 400;
-  --text-caption-2-emphasized: 10px/auto var(--font-body) 600;
-  --text-button: 12px/auto var(--font-heading) 700;
+  --text-caption-2-emphasized: 10px/normal var(--font-body) 600;
+  --text-button: 600 12px/normal var(--font-heading);
   --text-heading-2: 14px/18px var(--font-heading) 700;
   --text-title: 24px/24px var(--font-heading) 700;
   
