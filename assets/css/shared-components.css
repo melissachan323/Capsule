@@ -43,8 +43,8 @@ body {
 }
 
 .header-top-level .icon-button {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,8 +55,8 @@ body {
 }
 
 .header-top-level .icon-button svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   fill: var(--color-text-emphasis);
 }
 
@@ -70,8 +70,8 @@ body {
 }
 
 .header-secondary .back-button {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,22 +82,21 @@ body {
   margin-right: var(--space-3);
 }
 
-.header-secondary .back-button svg {
+.header-secondary .back-button img {
   width: 16px;
   height: 16px;
-  fill: var(--color-text-emphasis);
-  transform: rotate(180deg); /* pointing left */
+  fill: var(--color-button-active);
 }
 
 .header-secondary .title {
-  font: var(--text-heading-2);
+  font: var(--text-heading-3);
   color: var(--color-text-emphasis);
 }
 /* Buttons */
 /* Circular icon button */
 .icon-button {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,8 +112,8 @@ body {
 }
 
 .icon-button svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   fill: var(--color-text-emphasis);
 }
 
@@ -189,16 +188,15 @@ body {
   font-weight: 600;
 }
 
-/* Count badge on dark surface (white with black text) */
-.count-badge-dark {
-  background-color: var(--color-text-emphasis);
-  color: var(--color-text-black);
-}
-
 /* Count badge on light surface (dark with white text) */
 .count-badge-light {
   background-color: var(--color-text-black);
   color: var(--color-text-emphasis);
+}
+
+/* Utility classes */
+.font-bold {
+  font-weight: 600;
 }
 
 /* Card component */
@@ -236,21 +234,22 @@ body {
   border-radius: var(--radius-pill);
   overflow: hidden;
   border: 1px solid var(--color-button-stroke);
+  padding: var(--space-4);
 }
 
 .search-field .search-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   padding: var(--space-2);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.search-field .search-icon svg {
-  fill: var(--color-text-inactive);
-  width: 18px;
-  height: 18px;
+.search-field .search-icon img {
+  fill: var(--color-text-caption);
+  width: 16px;
+  height: 16px;
 }
 
 .search-field input {

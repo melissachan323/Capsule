@@ -1,6 +1,8 @@
 /* Design Tokens for Capsule App */
 /* Extracted from .clinerules/DESIGN.md */
 
+/* Import font files from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap');
 /* Color Tokens */
 :root {
   /* Backgrounds */
@@ -27,7 +29,7 @@
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   
-  --text-heading-3: 18px/24px var(--font-heading) 700;
+  --text-heading-3: 600 18px/24px var(--font-heading);
   --text-caption: 12px/16px var(--font-body) 400;
   --text-body: 14px/20px var(--font-body) 400;
   --text-subtitle-emphasized: 14px/20px var(--font-body) 600;
@@ -55,7 +57,7 @@
   /* Radius */
   --radius-card: 16px; /* Corner radius */
   --radius-pill: 9999px; /* For full pills (effectively 100%) */
-  --radius-icon-button: 50%; /* For circular icons */
+  --radius-icon-button: 99999px; /* For circular icons */
   
   /* Elevation */
   --shadow-button: 0px 1px 3px rgba(0, 0, 0, 0.3);
