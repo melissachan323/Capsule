@@ -21,7 +21,7 @@ class BottomNav extends HTMLElement {
     if (capsulesSlot) {
       capsulesSlot.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'capsule.html'; // Match your actual capsule filename
+        window.location.href = 'capsule-page.html'; // Match your actual capsule filename
       });
     }
 
@@ -39,7 +39,7 @@ class BottomNav extends HTMLElement {
     if (chatsSlot) {
       chatsSlot.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'chat.html'; // Match your actual chat filename
+        window.location.href = 'chat-page.html'; // Match your actual chat filename
       });
     }
 
