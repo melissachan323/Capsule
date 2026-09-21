@@ -16,15 +16,34 @@ class BottomNav extends HTMLElement {
   }
 
   setupEvents() {
-    this.querySelectorAll('.nav-slot').forEach(slot => {
+    // Handle tab clicks and page routing for Chats
+    const chatsSlot = this.querySelector('.nav-slot.chats');
+    if (chatsSlot) {
+      chatsSlot.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'chat-page.html'; // Adjust filename if your chat page is named differently
+      });
+    }
+
+    // Handle tab clicks and page routing for Capsules
+    const capsulesSlot = this.querySelector('.nav-slot.capsules');
+    if (capsulesSlot) {
+      capsulesSlot.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'capsule-page.html'; // Adjust filename if your capsule page is named differently
+      });
+    }
+
+    // General tab state handling for other tabs
+    this.querySelectorAll('.nav-slot[data-tab]').forEach(slot => {
       slot.addEventListener('click', () => {
         const tab = slot.dataset.tab;
-        if (tab) {
+        if (tab && tab !== 'capture' && tab !== 'chats' && tab !== 'capsules') {
           this.setAttribute('active-tab', tab);
-          // Dispatch custom event for parent application state management
           this.dispatchEvent(new CustomEvent('tab-change', {
             detail: { tab },
-            bubbles: true
+            bubbles: true,
+            composed: true
           }));
         }
       });
@@ -32,14 +51,14 @@ class BottomNav extends HTMLElement {
   }
 
   render() {
-    const activeTab = this.getAttribute('active-tab') || 'chats';
+    const activeTab = this.getAttribute('active-tab') || 'capsules';
 
     this.innerHTML = `
       <nav class="bottom-nav">
         <!-- Capsules Tab -->
         <div class="nav-slot capsules ${activeTab === 'capsules' ? 'active' : 'inactive'}" data-tab="capsules">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-            <path fill="currentColor" d="M5.33341 13.3335H10.6667V11.3335C10.6667 10.6002 10.4056 9.97238 9.88341 9.45016C9.36119 8.92794 8.73342 8.66683 8.00008 8.66683C7.26675 8.66683 6.63897 8.92794 6.11675 9.45016C5.59453 9.97238 5.33341 10.6002 5.33341 11.3335V13.3335ZM2.66675 14.6668V13.3335H4.00008V11.3335C4.00008 10.6557 4.15841 10.0196 4.47508 9.42516C4.79175 8.83072 5.23341 8.35572 5.80008 8.00016C5.23341 7.64461 4.79175 7.16961 4.47508 6.57516C4.15841 5.98072 4.00008 5.34461 4.00008 4.66683V2.66683H2.66675V1.3335H13.3334V2.66683H12.0001V4.66683C12.0001 5.34461 11.8417 5.98072 11.5251 6.57516C11.2084 7.16961 10.7667 7.64461 10.2001 8.00016C10.7667 8.35572 11.2084 8.83072 11.5251 9.42516C11.8417 10.0196 12.0001 10.6557 12.0001 11.3335V13.3335H13.3334V14.6668H2.66675Z"/>
+            <path fill="currentColor" d="M5.33341 13.3335H10.6667V11.3335C10.6667 10.6002 10.4056 9.97238 9.88341 9.45016C9.36119 8.92794 8.73342 8.66683 8.00008 8.66683C7.26675 8.66683 6.63897 8.92794 6.11675 9.45016C5.59453 9.97238 5.33341 10.6002 5.33341 11.3335V13.3335ZM2.66675 14.6668V13.3335H4.00008V11.3335C4.00008 10.6557 4.15841 10.0196 4.47508 9.42516C4.79175 8.83072 5.23341 8.35572 5.80008 8.00016C5.23341 7.64461 4.79175 7.16961 4.47508 6.57516C4.15841 5.98072 4.00008 5.34461 4.00008 4.66683V2.66683H2.66675V1.3335H13.3334V2.66683H12.0001V4.66683C12.0001 5.34461 11.8417 5.98072 11.5251 6.57516C11.2084 7.16961 10.7667 7.64461 10.2001 8.00016C10.7667 8.35572 11.2084 8.83072 11.5251 9.42516C11.8417 10.0196 12.0001 10.6557 12.0001 11.3335V13.3335H13.3334H14.6668V2.66675Z"/>
           </svg>
           <div class="label">Capsules</div>
         </div>
@@ -56,7 +75,7 @@ class BottomNav extends HTMLElement {
         <!-- Chats Tab -->
         <div class="nav-slot chats ${activeTab === 'chats' ? 'active' : 'inactive'}" data-tab="chats">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-            <path fill="currentColor" d="M5 11.6C4.83 11.6 4.6875 11.5425 4.5725 11.4275C4.4575 11.3125 4.4 11.17 4.4 11V9.8H12.2V4.4H13.4C13.57 4.4 13.7125 4.4575 13.8275 4.5725C13.9425 4.6875 14 4.83 14 5V14L11.6 11.6H5ZM2 11V2.6C2 2.43 2.0575 2.2875 2.1725 2.1725C2.2875 2.0575 2.43 2 2.6 2H10.4C10.57 2 10.7125 2.0575 10.8275 2.1725C10.9425 2.2875 11 2.43 11 2.6V8C11 8.17 10.9425 8.3125 10.8275 8.4275C10.7125 8.5425 10.57 8.6 10.4 8.6H4.4L2 11Z"/>
+            <path fill="currentColor" d="M5 11.6C4.83 11.6 4.6875 11.5425 4.5725 11.4275C4.4575 11.3125 4.4 11.17 4.4 11V9.8H12.2V4.4H13.4C13.57 4.4 13.7125 4.5725 13.8275 4.5725C13.9425 4.6875 14 4.83 14 5V14L11.6 11.6H5ZM2 11V2.6C2 2.43 2.0575 2.2875 2.1725 2.1725C2.2875 2.0575 2.43 2 2.6 2H10.4C10.57 2 10.7125 2.0575 10.8275 2.1725C10.9425 2.2875 11 2.43 11 2.6V8C11 8.17 10.9425 8.3125 10.8275 8.4275C10.7125 8.5425 10.57 8.6 10.4 8.6H4.4L2 11Z"/>
           </svg>
           <div class="label">Chats</div>
         </div>
