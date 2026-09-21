@@ -123,16 +123,4 @@
 }
 
         /* Camera Header */
-.camera-header {
-  display: flex;
-  justify-content: space-between; /* Pushes first button to left, second to right */
-  align-items: center;  
-    padding: var(--space-4) var(--margin-side);
-         /* Centers icons vertically */
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10; 
-}
+

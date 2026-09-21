@@ -89,6 +89,23 @@ caption {
   color: var(--color-text-emphasis);
 }
 
+/* Camera Header */
+.camera-header {
+  display: flex;
+  justify-content: space-between; /* Pushes first button to left, second to right */
+  align-items: center;  
+  padding: var(--space-4) var(--margin-side);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; 
+}
+
+.camera-header.edit {
+  padding: var(--space-3) var(--space-3);
+}
 
 /* Buttons */
 /* Circular icon button */
@@ -103,6 +120,13 @@ caption {
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: background-color var(--space-1) ease;
+}
+
+.icon-button.with-text{
+  width: auto;
+  gap: var(--space-2);
+  display: flex;
+  padding: 0 var(--space-3);
 }
 
 .icon-button:hover {
