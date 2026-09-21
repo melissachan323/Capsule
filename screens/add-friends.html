@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Friends - Capsule</title>
     <script src="../js/user-cards.js" defer></script>
+    <script src="../js/friend-request-card.js" defer></script>
     <link rel="stylesheet" href="../assets/css/design-tokens.css">
     <link rel="stylesheet" href="../assets/css/shared-components.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,30 +53,19 @@
 
 <!-- Friend Requests Section -->
         <div class="mt-6">
-            <div class="flex-1">
+           <div class="hgap-2">
                 <h4>FRIEND REQUESTS</h4>
-                <div class="count-badge">2</div>
+                <div class="count-badge ms-2">2</div>
             </div>
 
             <!-- Friend Request Card 1 -->
-            <div class="card card-bordered card-padded mt-2">
-                <div class="flex-between">
-                    <div>
-                        <div class="avatar avatar-lg">
-                            <div class="avatar-placeholder"></div>
-                        </div>
-                    </div>
-                    <div class="flex-1">
-                        <p class="text-heading-2">@chloem</p>
-                        <p class="text-caption">9:24 AM [+16h]</p>
-                    </div>
-                    <p class="text-caption mt-2">3h ago</p>
-                </div>
-                <div class="mt-4 flex-between">
-                    <button class="button-primary" style="flex: 0.7;">ACCEPT</button>
-                    <button class="button-secondary" style="flex: 0.28;">DECLINE</button>
-                </div>
-            </div>
+            <friend-request-card 
+                avatar="../Avatar/Photo by Logan Isbell.png"
+                username="@chloem" 
+                time-ago="3h ago" 
+                local-time="9:24 AM [+16h]">
+            </friend-request-card>
+            
 
             <!-- Friend Request Card 2 -->
             <div class="card card-bordered card-padded mt-2" style="height: 140px;">
