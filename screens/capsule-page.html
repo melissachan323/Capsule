@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capsule Page - Capsule</title>
     <script src="../js/reply-bar.js" defer></script>
+    <script src="../js/capsule-card.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -45,20 +46,12 @@
             <div class="time">09:10 PM</div>
         </div>
 
-        <!-- Sender Row -->
-        <div class="mb-4" style="display: flex; align-items: center; gap: var(--space-2);">
-                <img src="../Avatar/Photo by Matas Katinas.png" alt="Elena Vance" class="avatar small">
-                <p class="text-body">Elena</p>
-            
-        </div>
-
-        <!-- Capsule Photo (Carousel Placeholder) -->
-        <div class="card mb-4" style="height: 400px; position: relative; overflow: hidden;">
-            <!-- Photo placeholder -->
-            <div style="width: 100%; height: 100%;">
-                <img src="../images/Camera.png" alt="Capsule Photo" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </div>
+        <capsule-card 
+        name="Elena Vance" 
+        avatar-src="../Avatar/Photo by Pesce Huang.png"
+        photo-src="../images/Camera.png">
+        </capsule-card>
+        
 
 
         <!-- Reply Bar -->
@@ -84,6 +77,23 @@
         </div>
     </nav>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const chips = document.querySelectorAll('.filter-chip');
+        chips.forEach(chip => {
+          chip.addEventListener('click', () => {
+            chips.forEach(c => {
+              if (c === chip) {
+                c.classList.add('selected');
+                c.classList.remove('unselected');
+              } else {
+                c.classList.add('unselected');
+                c.classList.remove('selected');
+              }
+            });
+          });
+        });
+      });
+    </script>
 </body>
 </html>
-        </div>
