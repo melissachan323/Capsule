@@ -14,18 +14,18 @@ class BottomNav extends HTMLElement {
       this.setupEvents();
     }
   }
-
+  
   setupEvents() {
     // Handle Capsules tab navigation
     const capsulesSlot = this.querySelector('.nav-slot.capsules');
     if (capsulesSlot) {
       capsulesSlot.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'capsule-page.html';
+        window.location.href = 'capsule.html'; // Match your actual capsule filename
       });
     }
 
-      // Handle Camera tab navigation
+    // Handle Camera tab navigation
     const cameraSlot = this.querySelector('.nav-slot.capture');
     if (cameraSlot) {
       cameraSlot.addEventListener('click', (e) => {
@@ -39,7 +39,7 @@ class BottomNav extends HTMLElement {
     if (chatsSlot) {
       chatsSlot.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'chat-page.html';
+        window.location.href = 'chat.html'; // Match your actual chat filename
       });
     }
 

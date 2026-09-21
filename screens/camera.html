@@ -18,7 +18,7 @@
         <div class="viewfinder">
             <header class="camera-header">
                 <!-- Top-left: Close button -->
-                <button class="icon-button">
+                <button class="icon-button" id="close-button">
                     <img src="../Icons/Icon Name=Cross.svg" alt="Back">
                 </button>
 
@@ -58,6 +58,26 @@
 </div>
         </div>
     </div>
+
+    <script>
+      // camera.js
+document.addEventListener('DOMContentLoaded', () => {
+  const closeButton = document.getElementById('close-button');
+
+  if (closeButton) {
+    closeButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Check if there is history to go back to; otherwise fallback to capsule page
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = 'capsule.html';
+      }
+    });
+  }
+});
+    </script>
 </body>
 </html>
             </div>
