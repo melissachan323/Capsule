@@ -399,14 +399,13 @@ friend-request-card .button-group {
   color: var(--color-text-inactive);
 }
 
-.
+
 
 /* Avatar */
 .avatar {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-pill);
-  
 }
 
 .avatar.small {
