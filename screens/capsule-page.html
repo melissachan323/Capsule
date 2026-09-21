@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capsule Page - Capsule</title>
+    <script src="../js/reply-bar.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -59,20 +60,11 @@
             </div>
         </div>
 
-        <!-- Reply Bar -->
-        <div class="reply-bar mb-8">
-            <button class="icon-button">
-                <img src="../Icons/Icon Name=Camera.svg" alt="Camera">
-            </button>
-            <button class="icon-button">
-                <img src="../Icons/Icon Name=Microphone.svg" alt="Microphone">
-            </button>
-            <span class="placeholder flex-1 ms-2 me-2">Reply to Capsule</span>
-            <button class="icon-button send">
-                <img src="../Icons/Icon Name=Send.svg" alt="Send">
-            </button>
-        </div>
 
+        <!-- Reply Bar -->
+        <reply-bar></reply-bar>
+
+        
     <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
         <div class="nav-slot capsules active">
