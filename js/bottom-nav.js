@@ -25,6 +25,15 @@ class BottomNav extends HTMLElement {
       });
     }
 
+      // Handle Camera tab navigation
+    const cameraSlot = this.querySelector('.nav-slot.capture');
+    if (cameraSlot) {
+      cameraSlot.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'camera.html';
+      });
+    }
+
     // Handle Chats tab navigation
     const chatsSlot = this.querySelector('.nav-slot.chats');
     if (chatsSlot) {
