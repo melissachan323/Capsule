@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - Capsule</title>
+    <script src="../js/reply-bar.js" defer></script>
     <script src="../js/photocard.js" defer></script>
     <link rel="stylesheet" href="../assets/css/design-tokens.css">
     <link rel="stylesheet" href="../assets/css/shared-components.css">
@@ -14,8 +15,8 @@
 <body>
     <div class="screen">
         <!-- Secondary Header -->
-        <header class="header-secondary mb-4 hgap-4">
-            <button class="icon-button">
+        <header class="header-secondary hgap-4">
+            <button class="icon-button" onclick="window.location.href='chat-page.html'">
                 <img src="../Icons/Icon Name=akar-icons_chevron-left-small.svg" alt="Back">
             </button>
             <div>
@@ -24,30 +25,32 @@
             <h3>Elena Vance</h3>
             <div class="count-badge light">7:24 AM [+16h]</div>
         </header>
-        <div style="display: flex; flex-direction: row; gap: var(--space-4);">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-3); width: 100%;">
+           
             <!-- Date Chip -->
             <div class="count-badge light">Today</div>
-
-        </div>
              
-        <!-- Message 1: Received -->
-        <photo-card 
-        reply
-        align="left"
-        src="../images/Camera.png" 
-        alt="Food" 
-        caption="Rain cleared up finally"
-        subcaption="Sent 4:20 PM">
-        </photo-card>
+            <!-- Message 1: Received -->
+            <photo-card 
+            reply
+            align="left"
+            src="../images/Camera.png" 
+            alt="Food" 
+            caption="Rain cleared up finally"
+            subcaption="Sent 4:20 PM">
+            </photo-card>
 
-         <photo-card 
-        reply
-        align="right"
-        src="../images/Camera.png" 
-        alt="Food" 
-        caption="Rain cleared up finally"
-        subcaption="Sent 5:20 PM">
-        </photo-card>
+            <photo-card 
+            reply
+            align="right"
+            src="../images/Camera.png" 
+            alt="Food" 
+            caption="Rain cleared up finally"
+            subcaption="Sent 5:20 PM">
+            </photo-card>
+        </div>
+
+        
 
         
         <!-- Reply Bar (floating at bottom) -->
