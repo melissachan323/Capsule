@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Page - Capsule</title>
+    <script src="../js/chat-card.js" defer></script>
     <link rel="stylesheet" href="../assets/css/design-tokens.css">
     <link rel="stylesheet" href="../assets/css/shared-components.css">
+    <script src="../js/search.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -13,51 +15,87 @@
 <body>
     <div class="screen">
         <!-- Top-level Header -->
-        <header class="header-top-level mb-4">
+        <header class="header-top-level">
+            <div class="space"></div>
             <div class="wordmark">CAPSULE</div>
-            <div>
+            <div class="space">
                 <button class="icon-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4v2l4.4 4.4a2 2 0 010 2.8l-2.82.82a4.95 4.95 0 00-1.06-1.06l.82-2.82V8l-4 4H6a2 2 0 01-2-2V6a2 2 0 012-2h8z"/></svg>
+                    <img src="../Icons/Icon Name=Add Friend.svg" alt="Add Friend">
                 </button>
                 <button class="icon-button ms-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65C21.83 10.45 22 9.88 22 9.25c0-.6-.61-.25-1.17-.69-1.62L22 5.07c-.34-.34-.92-.34-1.26 0l-1.83 2.07c-.28-.31-.67-.5-1.15-.58C18.23 6.9 17.52 6.5 16.75 6.5H15v-2h4c.97 0 1.75.78 1.75 1.75v2.25h-3.28l-.31-.31c-.34-.34-.85-.34-1.19 0l-1.83 2.07c-.44-.45-1.06-.7-1.79-.7h-3.28c-.97 0-1.75.78-1.75 1.75v4.03c0 .97.78 1.75 1.75 1.75h2.25V19h-2v-2.25h-2V19h-2v-3.25c0-.97.78-1.75 1.75-1.75h3.28l.31-.31c.34-.34.85-.34 1.19 0l1.83-2.07c.28.31.67.5 1.15.58l1.83 2.07c-.44.34-1.06.25-1.62.69l2.11 1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                    <img src="../Icons/Icon Name=Settings.svg" alt="Settings" alt="Settings">
                 </button>
             </div>
         </header>
 
         <!-- Search Field -->
-        <div class="search-field mb-4">
-            <div class="search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            </div>
-            <input type="text" placeholder="Search Friends">
+        <search-field> </search-field>
+
 <!-- Conversation Cards -->
         <div class="mb-4">
+
+            <chat-card
+            title="Across the Pond"
+            time="42 min ago"
+            members="Liam, Maya"
+            message="Liam: Sunset over Thames is unreal tonight..."
+            avatars="../Avatar/Photo by Happy Face Emoji.png, ../Avatar/Photo by Jeffrey Keenan.png, ../Avatar/Photo by Logan Isbell.png">
+            </chat-card>
+
+            <chat-card
+            title="Across the Pond"
+            time="42 min ago"
+            members="Liam, Maya"
+            message="Liam: Sunset over Thames is unreal tonight..."
+            unread-count="2"
+            avatars="../Avatar/Photo by Happy Face Emoji.png, ../Avatar/Photo by Jeffrey Keenan.png, ../Avatar/Photo by Logan Isbell.png">
+            </chat-card>
+
+            <chat-card
+            title="Elena"
+            time="42 min ago"
+            members="7:24 AM [+16h]"
+            message="Morning coffee in Shibuya!!"
+            avatar="./Avatar/Photo by Happy Face Emoji.png"
+            status-icon="🌙">
+            </chat-card>
+
             <!-- Card 1: Across the Pond (Group, Read) -->
-            <div class="card card-bordered card-padded mt-2 flex-between" style="height: 112px;">
-                <div>
+            <div class="card card-padded mt-3" style="flex-direction: column;">
+                
+                <!-- Info about the chat -->
+                <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-2);">
                     <!-- Group avatar: two overlapping photos plus a gray +1 circle -->
-                    <div style="position: relative; width: 56px; height: 56px;">
-                        <div class="avatar avatar-lg" style="position: absolute; left: 0; top: 0;">
-                            <div class="avatar-placeholder"></div>
+                    <div style="position: relative; width: 56px; height: 24px;">
+                        <div style="position: absolute; left: 0; top: 0;">
+                            <img src="../Avatar/Photo by Logan Isbell.png" class="avatar small";>
                         </div>
-                        <div class="avatar avatar-lg" style="position: absolute; left: 20px; top: 20px;">
-                            <div class="avatar-placeholder"></div>
+                         <div style="position: absolute; left: 20px;">
+                            <img src="../Avatar/Photo by Vinicius _amnx_ Amano.png" class="avatar small";>
                         </div>
-                        <div class="avatar avatar-lg" style="position: absolute; left: 40px; top: 40px; width: 24px; height: 24px; background-color: var(--color-text-inactive); color: var(--color-text-emphasis); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                        <div class = "avatar small" style="position: absolute; left: 40px; background-color: #3A3939; color: var(--color-text-body); display: flex; align-items: center; justify-content: center; font-size: 12px;">
                             +1
                         </div>
                     </div>
+
+                    <!-- Chat title and participants -->
+                    <div style="display: flex; flex-direction: column;" class="flex-1">
+                        <div class="flex-between">
+                            <h3>Across the Pond</h3>
+                            <p class="text-caption-2">42 min ago</p>
+                        </div>
+                        <!-- Participants -->
+                        <p class="text-caption">Liam, Maya, Ronald</p>
+                    </div>
                 </div>
-                <div class="flex-1">
-                    <p class="text-heading-2">Across the Pond</p>
-                    <p class="text-caption">Liam, Maya, Ronald</p>
-                </div>
-                <div>
-                    <p class="text-caption mt-2">42 min ago</p>
-                    <p class="text-body">Liam: Sunset over Thames is unreal tonight...</p>
-                </div>
+
+                <!-- Message Preview -->
+                <p class="text-body">Liam: Sunset over Thames is unreal tonight...</p>  
+                </div> 
+                
             </div>
+                
+        </div>
 
             <!-- Card 2: Tokyo Drift 🏎️ (Group, Unread) -->
             <div class="card card-bordered card-padded mt-2 flex-between" style="height: 112px;">
@@ -164,8 +202,8 @@
     <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
         <div class="nav-slot capsules inactive">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"/></svg>
-            <div class="label">Capsules</div>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M6 2h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"/></svg>
+            <div class="label">TEST</div>
         </div>
         <div class="nav-slot capture">
             <div class="outer-ring">
@@ -175,7 +213,7 @@
             </div>
         </div>
         <div class="nav-slot chats active">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16l4-2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 12H6v-2h8v2zm8-6H6v-2h12v2zm0-4H6V6h12v2z"/></svg>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16l4-2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 12H6v-2h8v2zm8-6H6v-2h12v2zm0-4H6V6h12v2z"/></svg>
             <div class="label">Chats</div>
         </div>
     </nav>

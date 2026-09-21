@@ -350,6 +350,23 @@ friend-request-card .button-group {
 .flex-2 { flex: 2; }
 .flex-1 { flex: 1; }
 
+
+/* Chat card */
+/* Unread bullet indicator */
+.unread-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-text-emphasis, #ffffff);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Unread text styling */
+.card.is-unread .message-text {
+  color: var(--color-text-emphasis, #ffffff);
+  font-weight: 600;
+}
+
 /* Reply bar */
 .reply-bar {
   display: flex;
@@ -388,15 +405,19 @@ friend-request-card .button-group {
 .avatar {
   width: 48px;
   height: 48px;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--radius-pill);
+  
 }
 
 .avatar.small {
   width: 24px;
   height: 24px;
+  border-radius: var(--radius-pill);
+  background-color: #3A3939;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
