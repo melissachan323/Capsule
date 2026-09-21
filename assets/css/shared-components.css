@@ -518,12 +518,12 @@ friend-request-card .button-group {
 
 .nav-slot.active .icon,
 .nav-slot.active .label {
-  color: var(--color-text-emphasis);
+  opacity: 1;
 }
 
 .nav-slot.inactive .icon,
 .nav-slot.inactive .label {
-  color: var(--color-text-inactive);
+  opacity: 0.4;
 }
 
 /* Specific icons for nav */
