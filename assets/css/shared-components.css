@@ -17,9 +17,9 @@ body {
   color: var(--color-text-body);
 }
 
-h3 {
-  font: var(--text-heading-3);
-  color: var(--color-text-emphasis); /* Sets default color for every <h3> on the page */
+h4 {
+  font: var(--text-heading-4);
+  color: var(--color-text-body); /* Sets default color for every <h3> on the page */
 }
 
 caption {
@@ -75,7 +75,6 @@ caption {
   display: flex;
   align-items: center;
   padding: var(--space-3) 0;
-  border-bottom: 1px solid var(--color-button-stroke);
   margin-bottom: var(--space-4);
 }
 
@@ -110,9 +109,9 @@ caption {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-bg-component);
+  background-color: var(--color-button-fill);
   border: 1px solid var(--color-button-stroke);
-  border-radius: var(--radius-icon-button);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   transition: background-color var(--space-1) ease;
 }
@@ -154,16 +153,14 @@ caption {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
-  padding: 0 var(--space-6);
-  background-color: var(--color-button-inactive);
+  padding: var(--space-6);
+  background-color: var(--color-button-fill);
   color: var(--color-text-emphasis);
   font: var(--text-button);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-card);
   border: 1px solid var(--color-button-stroke);
   cursor: pointer;
   text-transform: uppercase;
-  gap: var(--space-2);
 }
 
 /* Destructive button (for sign out) */
@@ -305,14 +302,6 @@ caption {
   gap: var(--space-1);
 }
 
-.user-card .username {
-  font: var(--text-heading-3);
-  color: var(--color-text-emphasis);
-  margin: 0;
-}
-
-
-}
 
 /* Reply bar */
 .reply-bar {
@@ -533,6 +522,12 @@ caption {
 
 .text-right {
   text-align: right;
+}
+
+.gap-8 { 
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
 .mt-1 { margin-top: var(--space-1); }

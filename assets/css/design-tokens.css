@@ -36,7 +36,7 @@
   --text-caption-2: 10px/16px var(--font-body) 400;
   --text-caption-2-emphasized: 10px/normal var(--font-body) 600;
   --text-button: 600 12px/normal var(--font-heading);
-  --text-heading-2: 14px/18px var(--font-heading) 700;
+  --text-heading-4: 600 14px/18px var(--font-heading);
   --text-title: 24px/24px var(--font-heading) 700;
   
   /* Spacing */
@@ -57,7 +57,6 @@
   /* Radius */
   --radius-card: 16px; /* Corner radius */
   --radius-pill: 9999px; /* For full pills (effectively 100%) */
-  --radius-icon-button: 99999px; /* For circular icons */
   
   /* Elevation */
   --shadow-button: 0px 1px 3px rgba(0, 0, 0, 0.3);

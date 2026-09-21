@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Friends - Capsule</title>
+    <script src="../js/user-cards.js" defer></script>
     <link rel="stylesheet" href="../assets/css/design-tokens.css">
     <link rel="stylesheet" href="../assets/css/shared-components.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,56 +28,37 @@
             </div>
             <input type="text" placeholder="Search Friends" value="alex">
         </div>
-<!-- Search Result Cards -->
-        <div class="mt-4">
-            <!-- Card A -->
-            <div class="user-card">
-                    <div>
-                        <img src="../Avatar/Photo by Happy Face Emoji.png" alt="Avatar" class="avatar">
-                    </div>
-                <div >
-                    <h3>@alex_haha</h3>
-                    <p class="text-caption">9:24 AM [+16h]</p>
-                </div>
-                <button class="button-primary">ADD FRIEND</button>
-            </div>
 
+        <!-- Search Result Cards -->
+        <div class="gap-8 mt-4">
+            <!-- Card A -->
+            <user-card username="@alex_haha" time="9:24 AM [+16h]" avatar="../Avatar/Photo by Happy Face Emoji.png"></user-card>           
             <!-- Card B -->
-            <div class="card card-bordered card-padded mt-2 flex-between">
-                <div>
-                    <div class="avatar avatar-lg">
-                        <div class="avatar-placeholder"></div>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <p class="text-heading-2">@alex_nono</p>
-                    <p class="text-caption">Japan 6:24 AM [-16h]</p>
-                </div>
-                <button class="button-primary">ADD FRIEND</button>
-            </div>
+            <user-card username="@alex_nono" time="6:24 AM [+13h]" avatar="../Avatar/Photo by Jeffrey Keenan.png"></user-card>
         </div>
-<!-- Address Book Card -->
-        <div class="card card-bordered card-padded mt-4 flex-between" style="height: 70px;">
+        <!-- Address Book Card -->
+        <div class="card card-padded mt-4 flex-between">
             <div>
                 <button class="icon-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12l4-2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6v-2h6v2h6v-2zm0-10H6V6h12v2z"/></svg>
+                    <img src="../Icons/Icon Name=Contacts.svg">
                 </button>
             </div>
-            <div class="flex-1">
-                <p class="text-heading-2">Address Book</p>
+            <div>
+                <h3>Address Book</h3>
                 <p class="text-caption">6 acquaintances found</p>
             </div>
             <button class="button-secondary">SYNC CONTACTS</button>
         </div>
+
 <!-- Friend Requests Section -->
         <div class="mt-6">
-            <div class="flex-between">
-                <h2 class="text-heading-3 text-emphasis">FRIEND REQUESTS</h2>
+            <div class="flex-1">
+                <h4>FRIEND REQUESTS</h4>
                 <div class="count-badge">2</div>
             </div>
 
             <!-- Friend Request Card 1 -->
-            <div class="card card-bordered card-padded mt-2" style="height: 140px;">
+            <div class="card card-bordered card-padded mt-2">
                 <div class="flex-between">
                     <div>
                         <div class="avatar avatar-lg">
