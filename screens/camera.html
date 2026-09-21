@@ -31,23 +31,31 @@
         
 <!-- Bottom control deck -->
             <div class="bottom-deck">
-                <!-- Mode switcher -->
-                <div class="mode-switcher">
-                    <div class="segment active">PHOTO</div>
-                    <div class="segment">VIDEO</div>
-                </div>
-                <!-- Last-captured thumbnail -->
-                <div class="thumbnail">
-                    <img src="#" alt="Last captured">
-                </div>
-                <!-- Shutter button -->
-                <div class="shutter">
-                    <div class="ring"></div>
-                    <div class="disc"></div>
-                </div>
-                <!-- Right side empty -->
-                <div style="width: 48px;"></div>
-            </div>
+  <!-- Top Level: Mode Switcher -->
+  <div class="mode-switcher-container">
+    <div class="mode-switcher">
+      <div class="segment active">PHOTO</div>
+      <div class="segment">VIDEO</div>
+    </div>
+  </div>
+
+  <!-- Bottom Level: Controls Row -->
+  <div class="controls-row">
+
+    <div class="thumbnail">
+      <img src="../images/nature.png" alt="Last captured">
+    </div>
+
+    <!-- Center: Shutter Button -->
+    <button class="shutter" aria-label="Take Photo">
+      <div class="ring"></div>
+      <div class="disc"></div>
+    </button>
+
+    <!-- Right: Spacer to maintain center alignment -->
+    <div class="spacer"></div>
+  </div>
+</div>
         </div>
     </div>
 </body>
