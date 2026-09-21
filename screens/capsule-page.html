@@ -43,14 +43,31 @@
         <!-- Date and Time Block -->
         <div class="date-time-block mb-4">
             <div class="date mb-2">Thursday, May 24</div>
-            <div class="time">09:10 PM</div>
+            <div class="time" id="current-time">09:10 PM</div>
+            <div class="text-caption-2 mt-2" style="color: var(--color-text-caption)">scroll to view</div>
         </div>
 
-        <capsule-card 
-        name="Elena Vance" 
-        avatar-src="../Avatar/Photo by Pesce Huang.png"
-        photo-src="../images/Camera.png">
-        </capsule-card>
+        <!-- Horizontal carousel of capsules -->
+         <horizontal-carousel>
+           <capsule-card
+             name="Elena Vance"
+             avatar-src="../Avatar/Photo by Pesce Huang.png"
+             photo-src="../images/Camera.png"
+             timestamp="2026-05-24T18:05:00"
+           ></capsule-card>
+           <capsule-card
+             name="Marcus Lee"
+             avatar-src="../Avatar/Photo by Matas Katinas.png"
+             photo-src="../images/Camera.png"
+             timestamp="2026-05-24T21:10:00"
+           ></capsule-card>
+           <capsule-card
+             name="Sofia Ruiz"
+             avatar-src="../Avatar/Photo by Lina Ng.png"
+             photo-src="../images/Camera.png"
+             timestamp="2026-05-25T02:30:00"
+           ></capsule-card>
+         </horizontal-carousel>
         
 
 
@@ -92,6 +109,28 @@
               }
             });
           });
+        });
+      });
+    </script>
+<script type="module">
+      import '../js/horizontal-carousel.js';
+      import '../js/capsule-card.js';
+      document.addEventListener('DOMContentLoaded', () => {
+        const timeEl = document.getElementById('current-time');
+        const dateEl = document.querySelector('.date');
+        function formatTime(iso) {
+          const d = new Date(iso);
+          return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+        }
+        function formatDate(iso) {
+          const d = new Date(iso);
+          return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        }
+        document.addEventListener('capsule-changed', e => {
+          const { timestamp } = e.detail;
+          if (!timestamp) return;
+          timeEl.textContent = formatTime(timestamp);
+          dateEl.textContent = formatDate(timestamp);
         });
       });
     </script>

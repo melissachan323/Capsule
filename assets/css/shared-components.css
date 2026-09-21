@@ -645,4 +645,37 @@ friend-request-card .button-group {
 .button-block:hover {
   background-color: rgba(28, 27, 27, 0.8);
 }
+/* ---------- Carousel Container ---------- */
+.carousel-container {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;               /* Enable dragging / scroll */
+  gap: var(--space-4);            /* 16px between cards */
+  padding: var(--space-2) 0;      /* 8px top/bottom */
+  scroll-snap-type: x mandatory;  /* Optional snap */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;          /* Firefox */
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Carousel Items ---------- */
+.carousel-item {
+  flex: 0 0 auto;                 /* Do not grow/shrink */
+  width: 220px;                   /* Default width for side capsules */
+  scroll-snap-align: start;
+  border-radius: var(--radius-card); /* 16px */
+  background-color: var(--color-bg-component);
+  transition: transform 0.2s ease, width 0.2s ease;
+}
+
+/* ---------- Featured (centre) Capsule ---------- */
+.carousel-item.main {
+  width: 280px;                   /* Larger width */
+  transform: scale(1.05);         /* Slight scale‑up for extra emphasis */
+  z-index: 1;                     /* Ensure it sits above neighbours */
+}
+
+
 }
