@@ -1,0 +1,112 @@
+
+        .viewfinder {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .viewfinder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 33.33% 33.33%;
+            pointer-events: none;
+        }
+        
+        .bottom-deck {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .mode-switcher {
+            position: relative;
+            background-color: var(--color-bg-component);
+            border-radius: var(--radius-pill);
+            display: flex;
+        }
+        .mode-switcher .segment {
+            flex: 1;
+            text-align: center;
+            color: var(--color-text-inactive);
+            font: var(--text-button);
+            text-transform: uppercase;
+        }
+        .mode-switcher .segment.active {
+            background-color: var(--color-text-emphasis);
+            color: var(--color-text-black);
+            border-radius: var(--radius-pill);
+        }
+        .thumbnail {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--color-text-emphasis);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .shutter {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+        }
+        .shutter .ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--color-text-emphasis);
+            border-radius: 50%;
+        }
+        .shutter .disc {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 66px;
+            height: 66px;
+            margin-top: -33px;
+            margin-left: -33px;
+            background-color: var(--color-text-emphasis);
+            border-radius: 50%;
+        }
+
+        /* Camera Header */
+.camera-header {
+  display: flex;
+  justify-content: space-between; /* Pushes first button to left, second to right */
+  align-items: center;  
+    padding: var(--space-4) var(--margin-side);
+         /* Centers icons vertically */
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; 
+}
