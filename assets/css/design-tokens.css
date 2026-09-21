@@ -37,7 +37,7 @@
   --text-caption-2-emphasized: 600 10px/normal var(--font-body);
   --text-button: 600 12px/normal var(--font-heading);
   --text-heading-4: 600 14px/18px var(--font-heading);
-  --text-title: 24px/24px var(--font-heading) 700;
+  --text-title: 600 24px/24px var(--font-heading);
   
   /* Spacing */
   --space-0: 0px;

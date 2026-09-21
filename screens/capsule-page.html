@@ -13,20 +13,21 @@
 <body>
     <div class="screen">
         <!-- Top-level Header -->
-        <header class="header-top-level mb-4">
+        <header class="header-top-level">
+            <div class="space"></div>
             <div class="wordmark">CAPSULE</div>
-            <div>
+            <div class="space">
                 <button class="icon-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4v2l4.4 4.4a2 2 0 010 2.8l-2.82.82a4.95 4.95 0 00-1.06-1.06l.82-2.82V8l-4 4H6a2 2 0 01-2-2V6a2 2 0 012-2h8z"/></svg>
+                    <img src="../Icons/Icon Name=Add Friend.svg" alt="Add Friend">
                 </button>
                 <button class="icon-button ms-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65C21.83 10.45 22 9.88 22 9.25c0-.61-.25-1.17-.69-1.62L22 5.07c-.34-.34-.92-.34-1.26 0l-1.83 2.07c-.28-.31-.67-.5-1.15-.58C18.23 6.9 17.52 6.5 16.75 6.5H15v-2h4c.97 0 1.75.78 1.75 1.75v2.25h-3.28l-.31-.31c-.34-.34-.85-.34-1.19 0l-1.83 2.07c-.44-.45-1.06-.7-1.79-.7h-3.28c-.97 0-1.75.78-1.75 1.75v4.03c0 .97.78 1.75 1.75 1.75h2.25V19h-2v-2.25h-2V19h-2v-3.25c0-.97.78-1.75 1.75-1.75h3.28l.31-.31c.34-.34.85-.34 1.19 0l1.83-2.07c.28.31.67.5 1.15.58l1.83 2.07c-.44.34-1.06.25-1.62.69l2.11 1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                    <img src="../Icons/Icon Name=Settings.svg" alt="Settings" alt="Settings">
                 </button>
             </div>
         </header>
 
         <!-- Filter Chips -->
-        <div class="mb-4">
+        <div class="filter-chip-container mb-4">
             <div class="filter-chip selected">
                 RECEIVED
                 <div class="count-badge count-badge-light">2</div>
@@ -39,47 +40,43 @@
 
         <!-- Date and Time Block -->
         <div class="date-time-block mb-4">
-            <div class="date">Thursday, May 24</div>
+            <div class="date mb-2">Thursday, May 24</div>
             <div class="time">09:10 PM</div>
         </div>
 
         <!-- Sender Row -->
-        <div class="mb-4 flex-between">
-            <div class="avatar avatar-lg">
-                <div class="avatar-placeholder"></div>
-            </div>
-            <h2 class="text-heading-2 text-emphasis">Elena</h2>
+        <div class="mb-4" style="display: flex; align-items: center; gap: var(--space-2);">
+                <img src="../Avatar/Photo by Matas Katinas.png" alt="Elena Vance" class="avatar small">
+                <p class="text-body">Elena</p>
+            
         </div>
 
         <!-- Capsule Photo (Carousel Placeholder) -->
-        <div class="card card-bordered mb-4" style="height: 470px; position: relative; overflow: hidden;">
+        <div class="card mb-4" style="height: 400px; position: relative; overflow: hidden;">
             <!-- Photo placeholder -->
-            <div style="width: 100%; height: 100%; background-color: var(--color-bg-component); display: flex; align-items: center; justify-content: center; color: var(--color-text-emphasis); font-size: 18px;">
-                Capsule Photo
+            <div style="width: 100%; height: 100%;">
+                <img src="../images/Camera.png" alt="Capsule Photo" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <!-- Indicator for carousel peek (optional) -->
-            <div style="position: absolute; top: 0; left: 0; width: 20px; height: 100%; background-color: rgba(0,0,0,0.2); pointer-events: none;"></div>
-            <div style="position: absolute; top: 0; right: 0; width: 20px; height: 100%; background-color: rgba(0,0,0,0.2); pointer-events: none;"></div>
         </div>
 
         <!-- Reply Bar -->
         <div class="reply-bar mb-8">
             <button class="icon-button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4v2l4.4 4.4a2 2 0 010 2.8l-2.82.82a4.95 4.95 0 00-1.06-1.06l.82-2.82V8l-4 4H6a2 2 0 01-2-2V6a2 2 0 012-2h8z"/></svg>
+                <img src="../Icons/Icon Name=Camera.svg" alt="Camera">
             </button>
-            <button class="icon-button ms-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 14l1.41-1.41L16 11.59l1.41 1.41L18 13l-2.12 2.12L16 15.41l-1.41 1.41L12 13.41l-1.41-1.41L8 11.59l1.41-1.41L10 10l1.41 1.41L12 11.59z"/></svg>
+            <button class="icon-button">
+                <img src="../Icons/Icon Name=Microphone.svg" alt="Microphone">
             </button>
             <span class="placeholder flex-1 ms-2 me-2">Reply to Capsule</span>
-            <button class="send-button icon-button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            <button class="icon-button send">
+                <img src="../Icons/Icon Name=Send.svg" alt="Send">
             </button>
 </div>
 
     <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
         <div class="nav-slot capsules active">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"/></svg>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M5.33341 13.3335H10.6667V11.3335C10.6667 10.6002 10.4056 9.97238 9.88341 9.45016C9.36119 8.92794 8.73342 8.66683 8.00008 8.66683C7.26675 8.66683 6.63897 8.92794 6.11675 9.45016C5.59453 9.97238 5.33341 10.6002 5.33341 11.3335V13.3335ZM2.66675 14.6668V13.3335H4.00008V11.3335C4.00008 10.6557 4.15841 10.0196 4.47508 9.42516C4.79175 8.83072 5.23341 8.35572 5.80008 8.00016C5.23341 7.64461 4.79175 7.16961 4.47508 6.57516C4.15841 5.98072 4.00008 5.34461 4.00008 4.66683V2.66683H2.66675V1.3335H13.3334V2.66683H12.0001V4.66683C12.0001 5.34461 11.8417 5.98072 11.5251 6.57516C11.2084 7.16961 10.7667 7.64461 10.2001 8.00016C10.7667 8.35572 11.2084 8.83072 11.5251 9.42516C11.8417 10.0196 12.0001 10.6557 12.0001 11.3335V13.3335H13.3334V14.6668H2.66675Z"/></svg>
             <div class="label">Capsules</div>
         </div>
         <div class="nav-slot capture">
@@ -90,7 +87,7 @@
             </div>
         </div>
         <div class="nav-slot chats inactive">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16l4-2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 12H6v-2h8v2zm8-6H6v-2h12v2zm0-4H6V6h12v2z"/></svg>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M5 11.6C4.83 11.6 4.6875 11.5425 4.5725 11.4275C4.4575 11.3125 4.4 11.17 4.4 11V9.8H12.2V4.4H13.4C13.57 4.4 13.7125 4.4575 13.8275 4.5725C13.9425 4.6875 14 4.83 14 5V14L11.6 11.6H5ZM2 11V2.6C2 2.43 2.0575 2.2875 2.1725 2.1725C2.2875 2.0575 2.43 2 2.6 2H10.4C10.57 2 10.7125 2.0575 10.8275 2.1725C10.9425 2.2875 11 2.43 11 2.6V8C11 8.17 10.9425 8.3125 10.8275 8.4275C10.7125 8.5425 10.57 8.6 10.4 8.6H4.4L2 11Z"/></svg>
             <div class="label">Chats</div>
         </div>
     </nav>

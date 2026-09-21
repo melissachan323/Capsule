@@ -41,7 +41,6 @@ caption {
   align-items: center;
   justify-content: space-between;
   padding: var(--space-3) 0;
-  border-bottom: 1px solid var(--color-button-stroke);
   margin-bottom: var(--space-4);
 }
 
@@ -52,16 +51,11 @@ caption {
   color: var(--color-text-emphasis);
 }
 
-.header-top-level .icon-button {
-  width: 32px;
-  height: 32px;
+.header-top-level .space {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-bg-component);
-  border: 1px solid var(--color-button-stroke);
-  border-radius: var(--radius-icon-button);
-  cursor: pointer;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  width: 68px;
 }
 
 .header-top-level .icon-button svg {
@@ -369,8 +363,17 @@ friend-request-card .button-group {
 }
 
 .reply-bar .icon-button {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-bg-component);
+  border: none;
+}
+
+.reply-bar .icon-button.send {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-text-emphasis);
+  border: none;
 }
 
 .reply-bar .placeholder {
@@ -379,21 +382,7 @@ friend-request-card .button-group {
   color: var(--color-text-inactive);
 }
 
-.reply-bar .send-button {
-  width: 40px;
-  height: 40px;
-  background-color: var(--color-button-active);
-  border-radius: var(--radius-icon-button);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reply-bar .send-button svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--color-text-black);
-}
+.
 
 /* Avatar */
 .avatar {
@@ -405,18 +394,33 @@ friend-request-card .button-group {
   justify-content: center;
 }
 
+.avatar.small {
+  width: 24px;
+  height: 24px;
+}
+
 
 /* Filter chips */
+.filter-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
 .filter-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 32px;
-  padding: 0 var(--space-4);
+  padding: var(--space-2) var(--space-3);
   font: var(--text-button);
   border-radius: var(--radius-pill);
   cursor: pointer;
   text-transform: uppercase;
+  gap: var(--space-1);
 }
 
 .filter-chip.selected {
@@ -430,7 +434,7 @@ friend-request-card .button-group {
 }
 
 .filter-chip.unselected {
-  background-color: var(--color-button-inactive);
+  background-color: var(--color-button-fill);
   color: var(--color-text-emphasis);
   border: 1px solid var(--color-button-stroke);
 }
@@ -447,15 +451,13 @@ friend-request-card .button-group {
 }
 
 .date-time-block .date {
-  font: var(--text-body);
-  color: var(--color-text-inactive);
+  font: var(--text-caption-2);
+  color: var(--color-text-body);
 }
 
 .date-time-block .time {
-  font: var(--text-heading-2);
-  letter-spacing: -0.5px;
+  font: var(--text-title);
   color: var(--color-text-emphasis);
-  font-weight: 700;
 }
 
 /* Bottom navigation bar */
