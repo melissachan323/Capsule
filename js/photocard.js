@@ -1,6 +1,6 @@
 class PhotoCard extends HTMLElement {
   static get observedAttributes() {
-    return ['src', 'alt', 'caption', 'subcaption', 'retake-label', 'variant'];
+    return ['src', 'alt', 'caption', 'subcaption', 'retake-label', 'variant', 'align'];
   }
 
   connectedCallback() {
@@ -38,20 +38,24 @@ class PhotoCard extends HTMLElement {
     const subcaption = this.getAttribute('subcaption') || '';
     const retakeLabel = this.getAttribute('retake-label') || 'RETAKE';
     
-    // Check if reply variant is active
+    // Check reply mode and alignment direction (left | right)
     const isReply = this.getAttribute('variant') === 'reply' || this.hasAttribute('reply');
+    const align = (this.getAttribute('align') || 'left').toLowerCase(); // 'left' or 'right'
 
-    // Primary inner caption typography
+    // Alignment CSS helpers
+    const containerAlign = align === 'right' ? 'flex-end' : 'flex-start';
+    const textAlign = align === 'right' ? 'right' : 'left';
     const captionTextClass = isReply ? 'text-caption-2 text-emphasis' : 'text-body text-emphasis';
 
     this.innerHTML = `
-      <div class="photo-card-wrapper" style="width: 100%; display: flex; flex-direction: column;">
+      <!-- Full-Width Container -->
+      <div class="photo-card-wrapper" style="width: 100%; display: flex; flex-direction: column; align-items: ${containerAlign};">
         
-        <!-- Photo Box Container --> 
-        <div class="card card-bordered" style="width: 100%; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+        <!-- Photo Box Container (Fixed 300px x 300px) --> 
+        <div class="card card-bordered" style="width: 300px; height: 300px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
           
           <!-- Photo Media -->
-          <div style="width: 100%; height: 300px;">
+          <div style="flex: 1; width: 100%; overflow: hidden;">
             <img src="${src}" alt="${alt}" style="object-fit: cover; width: 100%; height: 100%; display: block;">
           </div>
 
@@ -83,7 +87,7 @@ class PhotoCard extends HTMLElement {
         
         <!-- Outer Subcaption Line: Rendered ONLY in Reply Variant -->
         ${isReply && subcaption ? `
-          <div style="margin-top: 4px;">
+          <div style="margin-top: 4px; width: 300px; text-align: ${textAlign};">
             <span class="text-caption-2" style="color: var(--color-text-caption, #8e8e93);">${subcaption}</span>
           </div>
         ` : ''}
