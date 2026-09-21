@@ -571,6 +571,17 @@ friend-request-card .button-group {
   border: 2px solid var(--color-text-emphasis);
 }
 
+/* Chat Card */
+chat-card {
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+chat-card:hover {
+  opacity: 0.85; /* Subtle hover feedback */
+}
+
 /* Utility classes */
 .hidden {
   display: none !important;

@@ -5,10 +5,23 @@ class ChatCard extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.setupEvents();
   }
 
   attributeChangedCallback() {
     this.render();
+  }
+
+  setupEvents() {
+    // Add click handler to navigate to chat.html when the card is clicked
+    this.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Optional: You can extract a specific chat ID or data attribute if needed
+      // const chatId = this.getAttribute('chat-id');
+      
+      window.location.href = 'chat.html';
+    });
   }
 
   render() {
