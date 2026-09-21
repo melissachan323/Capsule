@@ -62,18 +62,26 @@
     <script>
       // camera.js
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Handle Close / Back Button
   const closeButton = document.getElementById('close-button');
-
   if (closeButton) {
     closeButton.addEventListener('click', (e) => {
       e.preventDefault();
-      
-      // Check if there is history to go back to; otherwise fallback to capsule page
       if (window.history.length > 1) {
         window.history.back();
       } else {
         window.location.href = 'capsule.html';
       }
+    });
+  }
+
+  // 2. Handle Shutter Button (Take Photo -> Go to Edits)
+  const shutterButton = document.querySelector('.shutter');
+  if (shutterButton) {
+    shutterButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Navigate to your camera edits page
+      window.location.href = 'camera-edit.html';
     });
   }
 });
