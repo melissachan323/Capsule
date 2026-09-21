@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Page - Capsule</title>
+    <script src="../js/bottom-nav.js" defer></script>
     <script src="../js/chat-card.js" defer></script>
     <link rel="stylesheet" href="../assets/css/design-tokens.css">
     <link rel="stylesheet" href="../assets/css/shared-components.css">
@@ -32,191 +33,57 @@
         <search-field> </search-field>
 
 <!-- Conversation Cards -->
-        <div class="mb-4">
+        <div class="mt-4">
+            <div style="display:flex; flex-direction: column; gap: var(--space-2);">
+                <chat-card
+                title="Across the Pond"
+                time="42 min ago"
+                members="Liam, Maya"
+                message="Liam: Sunset over Thames is unreal tonight..."
+                avatars="../Avatar/Photo by Happy Face Emoji.png, ../Avatar/Photo by Jeffrey Keenan.png, ../Avatar/Photo by Logan Isbell.png">
+                </chat-card>
 
-            <chat-card
-            title="Across the Pond"
-            time="42 min ago"
-            members="Liam, Maya"
-            message="Liam: Sunset over Thames is unreal tonight..."
-            avatars="../Avatar/Photo by Happy Face Emoji.png, ../Avatar/Photo by Jeffrey Keenan.png, ../Avatar/Photo by Logan Isbell.png">
-            </chat-card>
+                <chat-card
+                title="Across the Pond"
+                time="42 min ago"
+                members="Liam, Maya"
+                message="Liam: Sunset over Thames is unreal tonight..."
+                unread-count="2"
+                avatars="../Avatar/Photo by Happy Face Emoji.png, ../Avatar/Photo by Jeffrey Keenan.png, ../Avatar/Photo by Logan Isbell.png">
+                </chat-card>
 
-            <chat-card
-            title="Across the Pond"
-            time="42 min ago"
-            members="Liam, Maya"
-            message="Liam: Sunset over Thames is unreal tonight..."
-            unread-count="2"
-            avatars="../Avatar/Photo by Happy Face Emoji.png, ../Avatar/Photo by Jeffrey Keenan.png, ../Avatar/Photo by Logan Isbell.png">
-            </chat-card>
+                <chat-card
+                title="Elena"
+                time="42 min ago"
+                members="7:24 AM [+16h]"
+                message="Morning coffee in Shibuya!!"
+                avatar="../Avatar/Photo by Happy Face Emoji.png"
+                status-icon="🌙">
+                </chat-card>
 
-            <chat-card
-            title="Elena"
-            time="42 min ago"
-            members="7:24 AM [+16h]"
-            message="Morning coffee in Shibuya!!"
-            avatar="./Avatar/Photo by Happy Face Emoji.png"
-            status-icon="🌙">
-            </chat-card>
-
-            <!-- Card 1: Across the Pond (Group, Read) -->
-            <div class="card card-padded mt-3" style="flex-direction: column;">
-                
-                <!-- Info about the chat -->
-                <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-2);">
-                    <!-- Group avatar: two overlapping photos plus a gray +1 circle -->
-                    <div style="position: relative; width: 56px; height: 24px;">
-                        <div style="position: absolute; left: 0; top: 0;">
-                            <img src="../Avatar/Photo by Logan Isbell.png" class="avatar small";>
-                        </div>
-                         <div style="position: absolute; left: 20px;">
-                            <img src="../Avatar/Photo by Vinicius _amnx_ Amano.png" class="avatar small";>
-                        </div>
-                        <div class = "avatar small" style="position: absolute; left: 40px; background-color: #3A3939; color: var(--color-text-body); display: flex; align-items: center; justify-content: center; font-size: 12px;">
-                            +1
-                        </div>
-                    </div>
-
-                    <!-- Chat title and participants -->
-                    <div style="display: flex; flex-direction: column;" class="flex-1">
-                        <div class="flex-between">
-                            <h3>Across the Pond</h3>
-                            <p class="text-caption-2">42 min ago</p>
-                        </div>
-                        <!-- Participants -->
-                        <p class="text-caption">Liam, Maya, Ronald</p>
-                    </div>
-                </div>
-
-                <!-- Message Preview -->
-                <p class="text-body">Liam: Sunset over Thames is unreal tonight...</p>  
-                </div> 
-                
+                <chat-card
+                title="Elena"
+                time="42 min ago"
+                members="7:24 AM [+16h]"
+                message="Morning coffee in Shibuya!!"
+                avatar="../Avatar/Photo by Happy Face Emoji.png"
+                unread-count="2"
+                status-icon="🌙">
+                </chat-card>  
             </div>
-                
+                           
+
         </div>
+            
 
-            <!-- Card 2: Tokyo Drift 🏎️ (Group, Unread) -->
-            <div class="card card-bordered card-padded mt-2 flex-between" style="height: 112px;">
-                <div>
-                    <!-- Group avatar: two overlapping photos -->
-                    <div style="position: relative; width: 56px; height: 56px;">
-                        <div class="avatar avatar-lg" style="position: absolute; left: 0; top: 0;">
-                            <div class="avatar-placeholder"></div>
-                        </div>
-                        <div class="avatar avatar-lg" style="position: absolute; left: 20px; top: 20px;">
-                            <div class="avatar-placeholder"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <p class="text-heading-2">Tokyo Drift 🏎️</p>
-                    <p class="text-caption">Cris, Jon</p>
-                </div>
-                <div>
-                    <p class="text-caption mt-2">Yesterday</p>
-                    <p class="text-body text-emphasis font-bold">• Cris: Nothing beats late night ramen</p>
-                    <div class="count-badge ms-2 mt-1">2</div>
-                </div>
-            </div>
+    <bottom-nav active-tab="chats"></bottom-nav>
 
-            <!-- Card 3: Elena Vance (Individual, Read) -->
-            <div class="card card-bordered card-padded mt-2 flex-between" style="height: 112px;">
-                <div>
-                    <!-- Avatar with crescent-moon badge -->
-                    <div style="position: relative; width: 56px; height: 56px;">
-                        <div class="avatar avatar-lg">
-                            <div class="avatar-placeholder"></div>
-                        </div>
-                        <div style="position: absolute; bottom: 0; right: 0; width: 20px; height: 20px; background-color: var(--color-text-inactive); border-radius: 50%;">
-                            <!-- Crescent moon placeholder -->
-                            <div style="width: 12px; height: 12px; background-color: var(--color-text-emphasis); border-radius: 50%; margin: 4px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <p class="text-heading-2">Elena Vance</p>
-                    <p class="text-caption">7:24 AM [+16h]</p>
-                </div>
-                <div>
-                    <p class="text-caption mt-2">Yesterday</p>
-                    <p class="text-body">Morning coffee in Shibuya!!</p>
-                </div>
-            </div>
-        </div>
-<div class="mb-4">
-            <!-- Card 4: Marcus Chen (Individual, Read) -->
-            <div class="card card-bordered card-padded mt-2 flex-between" style="height: 112px;">
-                <div>
-                    <div class="avatar avatar-lg">
-                        <div class="avatar-placeholder"></div>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <p class="text-heading-2">Marcus Chen</p>
-                    <p class="text-caption">6:24 AM [-16h]</p>
-                </div>
-                <div>
-                    <p class="text-caption mt-2">Yesterday</p>
-                    <p class="text-body">Sent at 9:00 PM</p>
-                </div>
-            </div>
-
-            <!-- Card 5: Kai Dubois (Individual, Unread) -->
-            <div class="card card-bordered card-padded mt-2 flex-between" style="height: 112px;">
-                <div>
-                    <div class="avatar avatar-lg">
-                        <div class="avatar-placeholder"></div>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <p class="text-heading-2">Kai Dubois</p>
-                    <p class="text-caption">9:24 AM [+16h]</p>
-                </div>
-                <div>
-                    <p class="text-caption mt-2">Yesterday</p>
-                    <p class="text-body text-emphasis font-bold">• Happy breakfast mmmm</p>
-                    <div class="count-badge ms-2 mt-1">2</div>
-                </div>
-            </div>
-
-            <!-- Card 6: Lucy Markings (Individual, Empty state) -->
-            <div class="card card-bordered card-padded mt-2 flex-between" style="height: 112px;">
-                <div>
-                    <div class="avatar avatar-lg">
-                        <div class="avatar-placeholder"></div>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <p class="text-heading-2">Lucy Markings</p>
-                    <p class="text-caption">10:24 PM [+16h]</p>
-                </div>
-                <div>
-                    <p class="text-body text-inactive" style="text-align: center;">Send your first Capsule!</p>
-                </div>
-            </div>
-        </div>
-</div>
-
-    <!-- Bottom Navigation Bar -->
-    <nav class="bottom-nav">
-        <div class="nav-slot capsules inactive">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M6 2h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"/></svg>
-            <div class="label">TEST</div>
-        </div>
-        <div class="nav-slot capture">
-            <div class="outer-ring">
-                <div class="inner-ring">
-                    <div class="center-disc"></div>
-                </div>
-            </div>
-        </div>
-        <div class="nav-slot chats active">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16l4-2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 12H6v-2h8v2zm8-6H6v-2h12v2zm0-4H6V6h12v2z"/></svg>
-            <div class="label">Chats</div>
-        </div>
-    </nav>
+<script>
+  // Listen for navigation changes
+  document.querySelector('bottom-nav').addEventListener('tab-change', (e) => {
+    console.log('Navigated to:', e.detail.tab);
+  });
+</script>
 
 </body>
 </html>
